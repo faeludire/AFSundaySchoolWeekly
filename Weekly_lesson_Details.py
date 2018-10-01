@@ -76,8 +76,7 @@ def tweet_lesson():
         time.sleep(5)
 
 
-schedule.every().day.at("15:50").do(tweet_lesson)
-
+schedule.every().day.at("09:00").do(tweet_lesson)
 while True:
     schedule.run_pending()
     time.sleep(60)
