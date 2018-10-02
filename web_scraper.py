@@ -1,15 +1,9 @@
 from bs4 import BeautifulSoup
-from credentials import *
-import tweepy
 import requests
 import re
-import schedule
-import time
-
-url = 'http://apostolicfaithweca.org/'
 
 
-def retrieval(website_url):
+def lesson_content_retrieval(website_url):
     page = requests.get(website_url)
     souped = BeautifulSoup(page.text, 'html.parser')
     lesson_bible_ref = ""
@@ -54,29 +48,3 @@ def retrieval(website_url):
 
     return tweet_lines
 
-
-def tweet_lesson():
-    # Access and authorize our Twitter credentials from credentials.py
-    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-    auth.set_access_token(access_token, access_token_secret)
-    api = tweepy.API(auth)
-
-    tweet_lines = retrieval(url)
-
-    print(tweet_lines[0])
-    last_tweet = api.update_status(tweet_lines[0])
-
-    # create a loop to iterate over lines
-    for tweet_line in tweet_lines[1:]:
-        try:
-            print(tweet_line)
-            last_tweet = api.update_status(tweet_line, last_tweet.id)
-        except tweepy.TweepError as e:
-            print(e.reason)
-        time.sleep(5)
-
-
-schedule.every().day.at("09:00").do(tweet_lesson)
-while True:
-    schedule.run_pending()
-    time.sleep(60)

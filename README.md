@@ -8,7 +8,6 @@ This project scrapes the latest Sunday school lesson details from apostolicfaith
 - Create `credentials.py` in `AFSundaySchoolWeekly/`
 - `credentials.py` holds your own Twitter API Keys
 
-
 ```
 credentials.py
 consumer_key = "YOUR-CONSUMER-KEY-HERE"
@@ -34,5 +33,5 @@ access_token_secret = "YOUR-TOKEN-SECRET-HERE"
 - To start the app run:
 
     ```
-    $python3 weekly_sunday_school.py
+    $ python3 sunday_school_weekly.py
     ```
