@@ -4,17 +4,6 @@ This project scrapes the latest Sunday school lesson details from apostolicfaith
 
 ## To run an instance of this app, you need:
 
-#### Twitter API Key
-- Create `credentials.py` in `AFSundaySchoolWeekly/`
-- `credentials.py` holds your own Twitter API Keys
-
-```
-credentials.py
-consumer_key = "YOUR-CONSUMER-KEY-HERE"
-consumer_secret = "YOUR-CONSUMER-SECRET-HERE"
-access_token = "YOUR-TOKEN-HERE"
-access_token_secret = "YOUR-TOKEN-SECRET-HERE"
-```
 
 #### Clone the Repo
 - The code is hosted at https://github.com/faeludire/AFSundaySchoolWeekly.git
@@ -29,7 +18,17 @@ access_token_secret = "YOUR-TOKEN-SECRET-HERE"
     ```
     $ pip install -r requirements.txt
     ```
-    
+- Create `credentials.py` in `AFSundaySchoolWeekly/`
+- `credentials.py` holds your own Twitter API Keys
+
+    ```
+    credentials.py
+    consumer_key = "YOUR-CONSUMER-KEY-HERE"
+    consumer_secret = "YOUR-CONSUMER-SECRET-HERE"
+    access_token = "YOUR-TOKEN-HERE"
+    access_token_secret = "YOUR-TOKEN-SECRET-HERE"
+    ```
+
 - To start the app run:
 
     ```

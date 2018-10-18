@@ -4,6 +4,7 @@ import re
 
 url = 'http://apostolicfaithweca.org/'
 
+
 def lesson_content_retrieval(website_url):
     page = requests.get(website_url)
     souped = BeautifulSoup(page.text, 'html.parser')
